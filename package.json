@@ -3,20 +3,33 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/core": "^10.0.9",
+    "@emotion/styled": "^10.0.9",
     "@types/jest": "24.0.11",
     "@types/node": "11.11.3",
     "@types/react": "16.8.8",
     "@types/react-dom": "16.8.2",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4",
+    "emotion-theming": "^10.0.9",
+    "mathjax": "^2.7.5",
+    "mathjax3": "^3.0.0-beta.3",
+    "react": "^16.8.6",
+    "react-custom-markdown": "^1.0.16",
+    "react-dom": "^16.8.6",
+    "react-hot-loader": "^4.8.0",
+    "react-mathjax": "^1.0.1",
+    "react-mathjax-preview": "^0.1.11",
+    "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.8",
-    "typescript": "3.3.3333"
+    "svg-inline-loader": "^0.8.0",
+    "svg-inline-react": "^3.1.0",
+    "typescript": "^3.5.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "react-app-rewired start",
+    "build": "GENERATE_SOURCEMAP=false react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-scripts eject",
+    "deploy": "yarn build; gsutil rsync -d -r build gs://laudatur.io"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -26,5 +39,9 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "@types/react-router-dom": "^4.3.1",
+    "react-app-rewired": "^2.1.1"
+  }
 }
